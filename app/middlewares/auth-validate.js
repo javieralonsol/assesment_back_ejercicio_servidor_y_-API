@@ -22,7 +22,11 @@ async function authValidate(req, res, next) {
       errorsManage.throwError(403, 'User account not found. Please login.');
     }
   } catch (err) {
-    errorsManage.createJsonError(err, res);
+    if (err.message && err.message === 'jwt malformed') {
+      res.redirect('/login');
+    } else {
+      errorsManage.createJsonError(err, res);
+    }
   }
 }
 

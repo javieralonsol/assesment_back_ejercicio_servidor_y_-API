@@ -11,7 +11,7 @@ app.use('/', require('./app/routes/users-routes.js'));
 
 app.use(function (req, res) {
   if (!req.route) {
-    res.status(404).send(`Error ${req.url} vía ${req.method} method returns 404 code\nOH fuck, Not found!`);
+    res.status(404).send(`Error ${req.url} vía ${req.method} method returns 404 code\nOoooops, Not found!`);
   }
 });
 
